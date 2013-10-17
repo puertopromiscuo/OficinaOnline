@@ -1,62 +1,74 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 	<head>
-		<link rel="stylesheet" type="text/css" href="CSS/principal.css">
-
-		<title>OficinaOnline.com</title>
+		<title>Sitio Web HTML5,css3 y jQuery</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Portafolio"/>
+		<meta meta name="viewport" content="width=device-width,initial-scale=1"/><!--El ancho de la página acorde con el ancho del dispositivo,inicialmente a escala 1-->
+		<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico"/>
+		<link rel="author" type="text/plain" href="humans.txt"/>
+		<link rel="stylesheet" href="css/estilos.css"/>
+		
+		<script type="text/javascript" src="js/function_panel.js"></script>
+		<!--Para navegadore antiguos reconozcan las nuevas etiquetas semanticas,codigo desde servidor-->
+		<!--[if lt IE 9]>
+			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 	</head>
-	
-	<body>
-		<!--HEAD-->
-		<div id="head">			
-			
-			<div id="logo">								
-			</div>
-			
-			<div id="menu">								
-			</div>
-		</div>
-
-		<!--BODY-->
-		<div id="body">
-				
-			<div id="container">
-					
-				<div id="information">				
-					
-				</div>
-
-				<div id="content">				
-					<button type="button" onclick="cargarInfo1()">Documento compartidos</button>
-					<button type="button" onclick="cargarInfo2()">Trabajo en equipo</button>					
-				</div>	
-								
-				<div id="login">
-
-					<!--
-					<div id="form">				
-						<form action="PHP/servidor.php" method="get">
-							<h6>Login Form<h6><br>
-							<input type="text" name="user" value="User"><br>
-							<input type="password" name="password" value="Password"><br>
-							<input type="checkbox" name="remember" value="Recuerdame" checked>Recuerdame  
-							<input type="submit" name="Login"><br>
-							<hr>
-							<a href="http://www.facebook.com">Facebook</a><br>
-							<a href="http://www.twitter.com">Twitter</a><br>
-						</form>
-					</div>	
-					-->									
-				</div>				
+		<header>
+			<h1>
+				<a href="index.html">
+					<img class="fade2" alt="Oficina online" src="img/logo2.png"/>
+					<img class="fade" alt="Oficina online" src="img/logo.png"/>
+				</a>
+			</h1>
+			<div id="nav_mobile"><a><img alt="Chat" src="img/nav_mobile.png"/></a></div>
+			<nav>
+				<ul>
+					<li><a class="myButton" href="index.html">Home</a></li>
+					<li><a class="myButton" href="log_in.html">Log in</a></li>
+					<li><a class="myButton" href="registro.html">Registro</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div id="flexbox">
+			<div id="panel_ico"></div>
+			<div id="btn_mdl">
+				<h3> Login</h3>
+				<!--USERNAME--><input name="username" type="text" placeholder="Username" />
+				</br>
+				<!--PASSWORD--><input name="password" type="password" placeholder="Password" />
+				</br>
+				</br>
+				<a href="#" class="myButton">Log in</a>
+				</br>
+				</br>
+				<a>Registrate</a>
 			</div>
 		</div>
+		<section id="contenido">
+			<section id="principal">
 
-		<!--FOOTER-->
-		<!--
-		<div id="footer">
-			
-		</div>
-		-->
-		<script src="js/index.js"></script>
+				<article id="galeria-inicio">
+					<a onclick="updateinfo('panel_ico','Gugui cabron')"><img alt="Chat" src="img/audio_video.png"/></a>
+				</article>
+				<article id="galeria-inicio">
+					<a><img alt="Correo" src="img/mail.png"/></a>
+				</article>
+				<article id="galeria-inicio">
+					<a><img alt="Documentos compartidos" src="img/doc_share.png"/></a>
+				</article>
+				<article id="galeria-inicio">
+					<a><img alt="Agenda" src="img/calendar.png"/><a>
+				</article>
+				<article id="galeria-inicio">
+					<a><img alt="Tareas" src="img/notes.png"/></a>
+				</article>
+			</section>
+		</section>
+		<footer>
+			Botones redes o otros.
+			<a rel="author" href="twitter.es" target="_black">Twitter</a>
+		</footer>
 	</body>
-
 </html>
