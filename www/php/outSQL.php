@@ -1,6 +1,6 @@
 <?php
 
-include("02_config.php");
+include("config.php");
 mysql_connect(DDBB_HOST,DDBB_USER,DDBB_PASS) or die("Error de conexcion");
 mysql_select_db(DDBB_NAME);
 $select = mysql_query("SELECT * FROM users");
