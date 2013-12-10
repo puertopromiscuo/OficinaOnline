@@ -1,74 +1,102 @@
 <!DOCTYPE html>
-<html lang="es">
-	<head>
-		<title>Sitio Web HTML5,css3 y jQuery</title>
-		<meta charset="UTF-8"/>
-		<meta name="description" content="Portafolio"/>
-		<meta meta name="viewport" content="width=device-width,initial-scale=1"/><!--El ancho de la página acorde con el ancho del dispositivo,inicialmente a escala 1-->
-		<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico"/>
-		<link rel="author" type="text/plain" href="humans.txt"/>
-		<link rel="stylesheet" href="css/estilos.css"/>
-		
-		<script type="text/javascript" src="js/function_panel.js"></script>
-		<!--Para navegadore antiguos reconozcan las nuevas etiquetas semanticas,codigo desde servidor-->
-		<!--[if lt IE 9]>
-			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-	</head>
-		<header>
-			<h1>
-				<a href="index.html">
-					<img class="fade2" alt="Oficina online" src="img/logo2.png"/>
-					<img class="fade" alt="Oficina online" src="img/logo.png"/>
-				</a>
-			</h1>
-			<div id="nav_mobile"><a><img alt="Chat" src="img/nav_mobile.png"/></a></div>
-			<nav>
-				<ul>
-					<li><a class="myButton" href="index.html">Home</a></li>
-					<li><a class="myButton" href="log_in.html">Log in</a></li>
-					<li><a class="myButton" href="registro.html">Registro</a></li>
-				</ul>
-			</nav>
-		</header>
-		<div id="flexbox">
-			<div id="panel_ico"></div>
-			<div id="btn_mdl">
-				<h3> Login</h3>
-				<!--USERNAME--><input name="username" type="text" placeholder="Username" />
-				</br>
-				<!--PASSWORD--><input name="password" type="password" placeholder="Password" />
-				</br>
-				</br>
-				<a href="#" class="myButton">Log in</a>
-				</br>
-				</br>
-				<a>Registrate</a>
-			</div>
-		</div>
-		<section id="contenido">
-			<section id="principal">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="img/logo.ico">
+    
+    <title>Oficina Online</title>
 
-				<article id="galeria-inicio">
-					<a onclick="updateinfo('panel_ico','Gugui cabron')"><img alt="Chat" src="img/audio_video.png"/></a>
-				</article>
-				<article id="galeria-inicio">
-					<a><img alt="Correo" src="img/mail.png"/></a>
-				</article>
-				<article id="galeria-inicio">
-					<a><img alt="Documentos compartidos" src="img/doc_share.png"/></a>
-				</article>
-				<article id="galeria-inicio">
-					<a><img alt="Agenda" src="img/calendar.png"/><a>
-				</article>
-				<article id="galeria-inicio">
-					<a><img alt="Tareas" src="img/notes.png"/></a>
-				</article>
-			</section>
-		</section>
-		<footer>
-			Botones redes o otros.
-			<a rel="author" href="twitter.es" target="_black">Twitter</a>
-		</footer>
-	</body>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <link href="css/carousel.css" rel="stylesheet">
+    
+    <!-- My CSS-->
+    <link href="css/mystyle.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand" href="#"><img src="img/logo.png" alt="Oficina Online"> Oficina Online</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="workspace.html">Entorno de trabajo</a></li>
+            <li><a href="#about">Demo</a></li>
+            <li class="dropdown" id="btn-des">
+                  <a href="#configuracion" class="dropdown-toggle" data-toggle="dropdown">Configuración <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Perfil</a></li>
+                    <li><a href="#">Miembros</a></li>
+                    <li><a href="#">Agenda</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Mejora tu cuenta</li>
+                    <li><a href="#">Obtén más proyectos almacenamiento</a></li>
+                    <li><a href="html/masproyectos.html">Obtén más proyectos</a></li>
+                  </ul>
+                </li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+    
+        <nav class="navbar navbar-fixed-bottom blackmiddle">
+          <div class="container" id="environment">      
+            <div class="row" id="drap">
+              <div class="col-xs-3 col-sm-2 col-lg-2 col-md-offset-2">
+                <img src="img/1385844520_vault.png" alt="keys" class="img-responsive">
+              </div><!--/span-->
+              <div class="col-xs-3 col-sm-2 col-lg-2">
+                <img src="img/1385844506_googlemail.png" alt="mail" class="img-responsive">
+                </div><!--/span-->
+              <div class="col-xs-3 col-sm-2 col-lg-2">
+                <img src="img/1385844527_calendar.png" alt="calendario" class="img-responsive">
+              </div><!--/span-->
+              <div class="col-xs-3 col-sm-2 col-lg-2">
+                <img src="img/1385844568_google_drive.png" alt="calendario" class="img-responsive">
+              </div><!--/span-->
+            </div><!--/row-->
+            <p>&copy; 2013 Oficina Online, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+          </div><!--/span-->
+          </nav>
+      
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="offcanvas.js"></script>
+    <script src="js/dnd.js"></script>
+    <script src="js/proyectos.js"></script>
+    
+  </body>
 </html>
