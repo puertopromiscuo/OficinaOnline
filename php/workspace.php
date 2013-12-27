@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="img/logo.ico">
+    
+    <title>Entorno de trabajo</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <link href="css/mystyleswork.css" rel="stylesheet">
+    <!--<link href="css/carousel.css" rel="stylesheet">-->
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    
+    
+    <!--API Google Drive-->
+    <!-- Load the Realtime libraries. -->
+    <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
+
+    <!-- Load the utility library. -->
+    <script type="text/javascript" src="realtime-client-utils.js"></script>
+    
+    <!-- PHP-->
+    <?php
+        include("php/phpserver.php");
+    ?>
+
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Oficina Online"> Oficina Online</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Entorno de trabajo</a></li>
+            <li><a href="#about">Demo</a></li>
+            <li class="dropdown" id="btn-des">
+                  <a href="#configuracion" class="dropdown-toggle" data-toggle="dropdown">Configuración <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Perfil</a></li>
+                    <li><a href="#">Miembros</a></li>
+                    <li><a href="#">Agenda</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Mejora tu cuenta</li>
+                    <li><a href="#">Obtén más proyectos almacenamiento</a></li>
+                    <li><a href="html/masproyectos.html">Obtén más proyectos</a></li>
+                  </ul>
+                </li>
+          </ul>
+            <!-- **********************************MENU DERECHA******************************** -->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown" id="btn-des-profile">
+                  <a href="#configuracion" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <?php echo $_SESSION["name_user"] ?> <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Perfil</a></li>
+                    <li><a href="#">Grupos</a></li>
+                    <li class="divider"></li>
+                    <li><a href="index.html">Cerrar sesión</a></li>
+                  </ul>
+               </li>
+            </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+    <div class="container">
+
+      <div class="row row-offcanvas row-offcanvas-right">
+         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+          <div class="list-group" id="list-proyects">
+            <a href="#" class="list-group-item active"><span class="glyphicon glyphicon-bookmark"> Dashboard</span></a>
+            <a href="#" class="list-group-item"><span class="glyphicon glyphicon-fire"> Aplicaciones</span></a>
+            <a href="#" class="list-group-item"><span class="glyphicon glyphicon-cog"> Componentes</span></a>
+            <!--<a href="#" class="list-group-item list-group-item-heading" id="new">
+                    <span class="glyphicon glyphicon-briefcase"> Nuevo Proyecto...</span></a>-->
+            
+            
+            
+            
+            <a href="#" class="list-group-item list-group-item-heading" data-toggle="modal" data-target="#myModal" id="newproyects">
+                    <span class="glyphicon glyphicon-briefcase"> Nuevo Proyecto...</span></a>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Detalles del proyecto</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                          <label for="inputProyectName" class="col-sm-2 control-label">Nombre: </label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputProyectName" placeholder="Nombre">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputProyectDate" class="col-sm-2 control-label">Finalización: </label>
+                          <div class="col-sm-10">
+                            <input type="date" class="form-control" id="inputProyectDate">
+                          </div>
+                        </div>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="new" data-dismiss="modal">Guardar</button>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+                    
+          </div>
+        </div><!--/span-->
+        
+
+        <div class="col-xs-12 col-sm-9">
+            <ul class="nav nav-tabs" id="tab-proyects">
+              <li id="tab-proyects-3" class="sr-only"><a href="#"></a></li>
+              <li id="tab-proyects-2" class="sr-only"><a href="#"></a></li>
+              <li id="tab-proyects-1" class="sr-only"><a href="#"></a></li>
+              <li class="active" id="tab-proyects-0"><a href="#presentacion">Presentación</a><!--<button type="button" class="close" id="close-environment"> &times;</button>--></li>
+              <li><a href="#">Reuniones</a></li>
+              <li><a href="#">...</a></li>
+            </ul>
+            <br>
+            
+            <div class="alert alert-warning alert-dismissable sr-only" id="alert-maxprojects">
+                    <button type="button" class="close" id="closebtn">&times;</button>
+                    <strong>Aviso!</strong> Has completado el limite de proyectos. <a href="html/masproyectos.html" class="alert-link"> Obtén más proyectos.</a>
+                    <br>
+            </div>
+            
+            
+            <!--
+            ************************************PARTE OCULTA******************************************************
+            -->
+            
+            
+            <div id="intoproyects" class="sr-only">
+                <p class="pull-left visible-xs">
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas" id="submenu">Menu <span class="glyphicon glyphicon-chevron-right" id="arrow"></span></button>
+                </p>
+                <br class="visible-xs">
+                <hr class="visible-xs">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 100%;" id="progress_bar">
+                    <span id="completed">100% Completado</span>
+                    </div>
+                    <div id="dateProyects">Fin: 26/5/2013</div>
+                </div>
+
+                <div id="google-drive">
+                    <h3>Documento de texto con Google Drive</h3>
+                    
+                    <!-- Text areas that will be used as our collaborative controls. -->
+                    <textarea id="editor1" class="form-control" rows="3" placeholder="Texto..."></textarea>
+                    <!--<textarea id="editor2" rows="15" cols="50" disabled="true"></textarea>-->
+                    <br />
+                    <button id="authorizeButton">Autorizar uso de google Drive</button>
+                    <!-- Undo and redo buttons. 
+                    <button id="undoButton" disabled>Undo</button>
+                    <button id="redoButton" disabled>Redo</button>-->
+                </div>
+                
+                <div id="drap">
+                    <ul class="list-group" id="list-tasks">
+                        <h3>Tareas</h3>
+                        <div id="drager"><li class="list-group-item"><input type="text" id="newtask" placeholder="Introducir tareas" autofocus/></li></div>
+                        
+
+                    </ul>
+                </div>
+            </div>
+            
+            
+            <!--
+            **************************************PARTE VISIBLE********************************************
+            -->
+           
+            
+            <div class="container" id="environment">
+                <p class="pull-left visible-xs">
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas" id="submenu2">Menu <span class="glyphicon glyphicon-chevron-right" id="arrow"></span></button>
+                </p>
+                <br class="visible-xs">
+                <hr class="visible-xs">
+            
+            <div class="row" id="drap">
+              <div class="col-xs-6 col-sm-2" id="drager">
+                <a href="#AudioVideo" id="aAudioVideo"><img src="img/audio_video.png" alt="audio_video" class="img-responsive"></a>
+              </div><!--/span-->
+              <div class="col-xs-6 col-sm-2" id="drager">
+                <a href="#Mail" id="amail"><img src="img/mail.png" alt="mail" class="img-responsive"></a>
+                </div><!--/span-->
+              <div class="col-xs-6 col-sm-2" id="drager">
+                <a href="#Calendar" id="acalendar"><img src="img/calendar.png" alt="calendario" class="img-responsive"></a>
+              </div><!--/span-->
+              <div class="col-xs-6 col-sm-2" id="drager">
+                <a href="#DocShare" id="adoc_share"><img src="img/doc_share.png" alt="doc_share" class="img-responsive"></a>
+              </div><!--/span-->
+              
+              </div><!--/row-->
+              <br>
+              
+              <div class="jumbotron col-xs-11 col-sm-9">
+                  <h1>Oficina Online</h1>
+                  <p>Construye tu propio entorno de trabajo.</p>
+              </div>
+             </div>
+            </div><!--/span-->
+            <!--ORIGINAL<p class="pull-right visible-xs">
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Menu <span class="glyphicon glyphicon-chevron-right"></span></button>
+            </p>-->
+            
+            
+            <!--**************************REUNIONES OCULTO********************************************-->
+            <div class="container sr-only" id="chatroom">
+                <img src="img/1385844520_vault.png" alt="chat" class="img-responsive">
+            </div>
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2013 Oficina Online, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+    </div><!--/.container-->
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="offcanvas.js"></script>
+    <script src="js/dnd.js"></script>
+    <script src="js/domainproyect.js"></script>   
+    <script src="js/dominiotask.js"></script>   
+    <script src="js/proyectos.js"></script>
+    <script src="js/googledrive.js"></script>
+    
+  </body>
+</html>
