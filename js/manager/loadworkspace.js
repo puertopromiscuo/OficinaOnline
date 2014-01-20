@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 $(document).ready(function() {
-    $('#btn-des-profile').click(function(){
+    $('#login-submit').click(function(){
         $("html").load('workspace.html');
     });
 });
