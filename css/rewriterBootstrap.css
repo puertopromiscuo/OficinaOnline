@@ -1,0 +1,19 @@
+
+body{
+    background-image: url('../img/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container_reg{
+	padding-top: 5%;
+}
+.input-group{
+    margin: 10px 0;
+}
+.blackmiddle{
+    background-color: rgba(0,0,0,.8);
+}
+.radius{
+    border-radius: 4px; 
+}
+

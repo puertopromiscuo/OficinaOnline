@@ -31,6 +31,9 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    
+     <script src="librerias/jquery/jquery-1.8.2.min.js"></script>
+     <script src="js/loginAjax.js"></script>
   </head>
 
   <body>
@@ -47,7 +50,7 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="workspace.php">Entorno de trabajo</a></li>
+            <li><a href="workspace.html">Entorno de trabajo</a></li>
             <li><a href="#about">Demo</a></li>
             <li class="dropdown" id="btn-des">
                   <a href="#configuracion" class="dropdown-toggle" data-toggle="dropdown">Configuración <b class="caret"></b></a>
@@ -84,21 +87,20 @@
         <div class="col-xs-10 col-sm-5 col-lg-4 col-lg-offset-8/*8*/ col-sm-offset-8 col-xs-offset-1 blackmiddle radius" id="form">
                 <h4 class="text-primary">Registro<small> Free</small></h4>
                 
-                <form name="formRegister" action="workspace.php" method="get" role="form">
-                    <div class="sr-only" id="desRegister"></div>
-                        <input type="email" name="email" id="email" placeholder="Email" class="form-control" autofocus required pattern="^([_a-z0-9-]+)*@([a-z0-9-]+)*.([_a-z0-9-]{3,4})" title="miEmail@gmail.com" /><br>
-                    
-                    <input type="text" name="user" id="user" placeholder="Nombre de Usuario" class="form-control" required/> <br>
-                    <input type="password" name="password" id="password" required placeholder="Contrase&ntilde;a" class="form-control" pattern="^[A-Za-z0-9]{5,20}" title="5-20 numeros o letras, sin espacios"/><br>
+                    <div id="regLog">
+                    <input type="text" name="name" placeholder="Nombre de Usuario" class="form-control" /> <br>
+                    <input type="email" name="email" placeholder="Email" class="form-control" autofocus pattern="^([_a-z0-9-]+)*@([a-z0-9-]+)*.([_a-z0-9-]{3,4})" title="miEmail@gmail.com" /><br>
+                    <input type="password" name="password" required placeholder="Contrase&ntilde;a" class="form-control" pattern="^[A-Za-z0-9]{5,20}" title="5-20 numeros o letras, sin espacios"/><br>
                     <div class="sr-only" id="desRegister2"></div>
-                        <input type="password" name="rePassword " id="rePassword" required placeholder="Repetir Contrase&ntilde;a" class="form-control" pattern="^[A-Za-z0-9]{5,20}" title="5-20 numeros o letras, sin espacios"/><br>
+                        <input type="password" name="rePassword" required placeholder="Repetir Contrase&ntilde;a" class="form-control" pattern="^[A-Za-z0-9]{5,20}" title="5-20 numeros o letras, sin espacios"/><br>
                     
-                    <input type="submit" name="submit" class="btn btn-default" id="login" value="Login">
-                    <input type="button" name="submit" class="btn btn-link" id="register" value="Registrarse"><br>
-
-                </form>
+                    <input type="button" id="log-send" class="btn btn-default" value="Login">
+                    <input type="button" id="reg-send" class="btn btn-link" value="Registrarse">
+                    <br>
+                 </div>
+                    <div id="result"></div>
                 <br>
-            </div>
+                
         </div>
         
         <nav class="navbar navbar-fixed-bottom blackmiddle">
