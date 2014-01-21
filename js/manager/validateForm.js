@@ -5,6 +5,8 @@ $(document).ready(function(){
            $('#error-form').removeClass('hidden').text(result);
        }else{
            $('#error-form').addClass('hidden');
+           /*Si todo es correcto que carge la pagina de trabajo*/
+           $("html").load('workspace.html');
        }
     });
     $('button#register-submit').on('click',function(){
